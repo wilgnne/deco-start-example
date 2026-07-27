@@ -10,7 +10,7 @@ const srcDir = path.resolve(import.meta.dirname, "src");
 
 export default defineConfig({
   server: {
-    allowedHosts: [".decocdn.com"],
+    allowedHosts: [".decocms.com", ".decocdn.com"],
   },
   plugins: [
     cloudflare({ viteEnvironment: { name: "ssr" } }),
