@@ -1,0 +1,1 @@
+# deco-start-example
