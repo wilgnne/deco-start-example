@@ -1,0 +1,214 @@
+{
+  "major": 1,
+  "version": "1.0.0",
+  "namespace": "site",
+  "site": "deco-start-example",
+  "manifest": {
+    "blocks": {
+      "sections": {
+        "site/sections/Hero.tsx": {
+          "$ref": "#/definitions/c2l0ZS9zZWN0aW9ucy9IZXJvLnRzeA==",
+          "namespace": "site"
+        }
+      },
+      "loaders": {
+        "commerce/loaders/product/extensions/listingPage.ts": {
+          "$ref": "#/definitions/Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvbGlzdGluZ1BhZ2UudHM=",
+          "namespace": "commerce"
+        },
+        "commerce/loaders/product/extensions/detailsPage.ts": {
+          "$ref": "#/definitions/Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvZGV0YWlsc1BhZ2UudHM=",
+          "namespace": "commerce"
+        }
+      },
+      "apps": {}
+    }
+  },
+  "schema": {
+    "definitions": {
+      "Resolvable": {
+        "title": "Select from saved",
+        "type": "object",
+        "required": [
+          "__resolveType"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "__resolveType": {
+            "type": "string"
+          }
+        }
+      },
+      "UmVzb2x2YWJsZQ==": {
+        "title": "Select from saved",
+        "type": "object",
+        "required": [
+          "__resolveType"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "__resolveType": {
+            "type": "string"
+          }
+        }
+      },
+      "Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvbGlzdGluZ1BhZ2UudHM=": {
+        "title": "commerce/loaders/product/extensions/listingPage.ts",
+        "type": "object",
+        "required": [
+          "__resolveType"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "commerce/loaders/product/extensions/listingPage.ts"
+            ],
+            "default": "commerce/loaders/product/extensions/listingPage.ts"
+          },
+          "data": {
+            "title": "Data",
+            "description": "Here comes your products or anything that can be extensible.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Resolvable"
+              }
+            ]
+          },
+          "extensions": {
+            "type": "array",
+            "title": "The data Extensions",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/Resolvable"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvZGV0YWlsc1BhZ2UudHM=": {
+        "title": "commerce/loaders/product/extensions/detailsPage.ts",
+        "type": "object",
+        "required": [
+          "__resolveType"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "commerce/loaders/product/extensions/detailsPage.ts"
+            ],
+            "default": "commerce/loaders/product/extensions/detailsPage.ts"
+          },
+          "data": {
+            "title": "Data",
+            "description": "Here comes your products or anything that can be extensible.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Resolvable"
+              }
+            ]
+          },
+          "extensions": {
+            "type": "array",
+            "title": "The data Extensions",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/Resolvable"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true,
+            "title": "Título"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true,
+            "title": "Descrição"
+          }
+        }
+      },
+      "c2l0ZS9zZWN0aW9ucy9IZXJvLnRzeA==": {
+        "title": "site/sections/Hero.tsx",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props"
+          }
+        ],
+        "required": [
+          "__resolveType"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "site/sections/Hero.tsx"
+            ],
+            "default": "site/sections/Hero.tsx"
+          }
+        }
+      }
+    },
+    "root": {
+      "sections": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Resolvable"
+          },
+          {
+            "$ref": "#/definitions/c2l0ZS9zZWN0aW9ucy9IZXJvLnRzeA==",
+            "inputSchema": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props"
+          }
+        ]
+      },
+      "loaders": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/Resolvable"
+          },
+          {
+            "$ref": "#/definitions/Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvbGlzdGluZ1BhZ2UudHM="
+          },
+          {
+            "$ref": "#/definitions/Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvZGV0YWlsc1BhZ2UudHM="
+          }
+        ]
+      },
+      "actions": {
+        "anyOf": []
+      },
+      "pages": {
+        "anyOf": []
+      },
+      "handlers": {
+        "anyOf": []
+      },
+      "matchers": {
+        "anyOf": []
+      },
+      "flags": {
+        "anyOf": []
+      },
+      "functions": {
+        "anyOf": []
+      },
+      "apps": {
+        "anyOf": []
+      }
+    }
+  },
+  "platform": "cloudflare",
+  "cloudProvider": "cloudflare"
+}

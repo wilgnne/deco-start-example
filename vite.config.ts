@@ -1,0 +1,47 @@
+import path from "path";
+import { cloudflare } from "@cloudflare/vite-plugin";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { decoVitePlugin } from "@decocms/start/vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "vite";
+
+const srcDir = path.resolve(import.meta.dirname, "src");
+
+export default defineConfig({
+  server: {
+    allowedHosts: [".decocdn.com"],
+  },
+  plugins: [
+    cloudflare({ viteEnvironment: { name: "ssr" } }),
+    tanstackStart({ server: { entry: "server" } }),
+    react(),
+    tailwindcss(),
+    decoVitePlugin(),
+  ],
+  build: {
+    sourcemap: "hidden",
+  },
+  define: {
+    "process.env.DECO_SITE_NAME": JSON.stringify(
+      process.env.DECO_SITE_NAME || "deco-start-example",
+    ),
+  },
+  esbuild: {
+    jsx: "automatic",
+    jsxImportSource: "react",
+  },
+  resolve: {
+    dedupe: [
+      "@decocms/start",
+      "@decocms/apps",
+      "@tanstack/react-start",
+      "@tanstack/react-router",
+      "react",
+      "react-dom",
+    ],
+    alias: {
+      "~": srcDir,
+    },
+  },
+});
