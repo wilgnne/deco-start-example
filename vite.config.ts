@@ -4,6 +4,7 @@ import { decoVitePlugin } from "@decocms/start/vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
+import { nitro } from "nitro/vite";
 
 const srcDir = path.resolve(import.meta.dirname, "src");
 
@@ -12,10 +13,11 @@ export default defineConfig({
     allowedHosts: [".decocms.com", ".decocdn.com"],
   },
   plugins: [
-    tanstackStart({ server: { entry: "server" } }),
+    tanstackStart({ server: { entry: "worker-entry" } }),
     react(),
     tailwindcss(),
     decoVitePlugin(),
+    nitro(),
   ],
   build: {
     sourcemap: "hidden",
