@@ -12,7 +12,7 @@ export default defineConfig({
     allowedHosts: [".decocms.com", ".decocdn.com"],
   },
   plugins: [
-    tanstackStart({ server: { entry: "worker-entry" } }),
+    tanstackStart({ server: { entry: "server" } }),
     react(),
     tailwindcss(),
     decoVitePlugin(),
