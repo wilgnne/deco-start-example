@@ -10,7 +10,11 @@ const srcDir = path.resolve(import.meta.dirname, "src");
 
 export default defineConfig({
   server: {
-    allowedHosts: [".decocms.com", ".decocdn.com"],
+    allowedHosts: [".decocdn.com", ".deco.host", ".deco.studio", ".decocms.com"],
+    headers: {
+      "Content-Security-Policy":
+        "frame-ancestors 'self' https://*.deco.studio http://localhost:* https://localhost:* https://admin.deco.cx https://studio.decocms.com",
+    },
   },
   plugins: [
     tanstackStart({ server: { entry: "worker-entry" } }),
