@@ -124,7 +124,7 @@
           }
         }
       },
-      "ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props": {
+      "ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props": {
         "type": "object",
         "properties": {
           "title": {
@@ -144,7 +144,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props"
+            "$ref": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props"
           }
         ],
         "required": [
@@ -169,7 +169,7 @@
           },
           {
             "$ref": "#/definitions/c2l0ZS9zZWN0aW9ucy9IZXJvLnRzeA==",
-            "inputSchema": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props"
+            "inputSchema": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props"
           }
         ]
       },
