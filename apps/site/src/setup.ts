@@ -1,7 +1,9 @@
 import { createSiteSetup } from "@decocms/start/setup";
+import { setInvokeLoaders } from "@decocms/start";
 // @ts-ignore Vite ?url import
 import appCss from "./styles/app.css?url";
 import { blocks } from "./server/cms/blocks.gen";
+import { siteLoaders } from "./server/cms/loaders.gen";
 
 createSiteSetup({
   sections: import.meta.glob("./sections/**/*.tsx") as Record<
@@ -20,3 +22,5 @@ createSiteSetup({
     return null;
   },
 });
+
+setInvokeLoaders(() => siteLoaders);
