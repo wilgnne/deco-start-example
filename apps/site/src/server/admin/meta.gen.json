@@ -6,12 +6,40 @@
   "manifest": {
     "blocks": {
       "sections": {
+        "site/sections/Header.tsx": {
+          "$ref": "#/definitions/c2l0ZS9zZWN0aW9ucy9IZWFkZXIudHN4",
+          "namespace": "site"
+        },
         "site/sections/Hero.tsx": {
           "$ref": "#/definitions/c2l0ZS9zZWN0aW9ucy9IZXJvLnRzeA==",
           "namespace": "site"
         }
       },
       "loaders": {
+        "site/loaders/test.ts": {
+          "$ref": "#/definitions/c2l0ZS9sb2FkZXJzL3Rlc3QudHM=",
+          "namespace": "site"
+        },
+        "website/loaders/environment.ts": {
+          "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL2Vudmlyb25tZW50LnRz",
+          "namespace": "website"
+        },
+        "website/loaders/fonts/googleFonts.ts": {
+          "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL2ZvbnRzL2dvb2dsZUZvbnRzLnRz",
+          "namespace": "website"
+        },
+        "website/loaders/fonts/local.ts": {
+          "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL2ZvbnRzL2xvY2FsLnRz",
+          "namespace": "website"
+        },
+        "website/loaders/secret.ts": {
+          "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL3NlY3JldC50cw==",
+          "namespace": "website"
+        },
+        "website/loaders/secretString.ts": {
+          "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL3NlY3JldFN0cmluZy50cw==",
+          "namespace": "website"
+        },
         "commerce/loaders/product/extensions/listingPage.ts": {
           "$ref": "#/definitions/Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvbGlzdGluZ1BhZ2UudHM=",
           "namespace": "commerce"
@@ -21,7 +49,12 @@
           "namespace": "commerce"
         }
       },
-      "apps": {}
+      "apps": {
+        "site/apps/site.ts": {
+          "$ref": "#/definitions/c2l0ZS9hcHBzL3NpdGUudHM=",
+          "namespace": "site"
+        }
+      }
     }
   },
   "schema": {
@@ -49,6 +82,245 @@
         "properties": {
           "__resolveType": {
             "type": "string"
+          }
+        }
+      },
+      "c2l0ZS9sb2FkZXJzL3Rlc3QudHM=": {
+        "title": "site/loaders/test.ts",
+        "type": "object",
+        "required": [
+          "__resolveType"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "site/loaders/test.ts"
+            ],
+            "default": "site/loaders/test.ts"
+          }
+        }
+      },
+      "d2Vic2l0ZS9sb2FkZXJzL2Vudmlyb25tZW50LnRz": {
+        "title": "Environment",
+        "type": "object",
+        "required": [
+          "__resolveType",
+          "value"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "website/loaders/environment.ts"
+            ],
+            "default": "website/loaders/environment.ts"
+          },
+          "value": {
+            "type": "string",
+            "title": "Environment Value"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "title": "Environment Name",
+            "description": "Used in dev mode as a environment variable (should not contain spaces or special characters)",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+          }
+        }
+      },
+      "d2Vic2l0ZS9sb2FkZXJzL2ZvbnRzL2dvb2dsZUZvbnRzLnRz": {
+        "title": "website/loaders/fonts/googleFonts.ts",
+        "type": "object",
+        "required": [
+          "__resolveType",
+          "fonts"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "website/loaders/fonts/googleFonts.ts"
+            ],
+            "default": "website/loaders/fonts/googleFonts.ts"
+          },
+          "fonts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "family": {
+                  "type": "string",
+                  "title": "Family"
+                },
+                "variations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "weight": {
+                        "type": "string",
+                        "enum": [
+                          "100",
+                          "200",
+                          "300",
+                          "400",
+                          "500",
+                          "600",
+                          "700",
+                          "800",
+                          "900"
+                        ],
+                        "title": "Weight"
+                      },
+                      "italic": {
+                        "type": "boolean",
+                        "nullable": true,
+                        "title": "Italic"
+                      }
+                    },
+                    "required": [
+                      "weight"
+                    ],
+                    "title": "{{weight}} {{#italic}}Italic{{/italic}}{{^italic}}{{/italic}}"
+                  },
+                  "title": "Variations"
+                }
+              },
+              "required": [
+                "family",
+                "variations"
+              ],
+              "titleBy": "family"
+            },
+            "title": "Fonts"
+          }
+        }
+      },
+      "d2Vic2l0ZS9sb2FkZXJzL2ZvbnRzL2xvY2FsLnRz": {
+        "title": "website/loaders/fonts/local.ts",
+        "type": "object",
+        "required": [
+          "__resolveType",
+          "fonts"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "website/loaders/fonts/local.ts"
+            ],
+            "default": "website/loaders/fonts/local.ts"
+          },
+          "fonts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "family": {
+                  "type": "string",
+                  "title": "Family"
+                },
+                "variations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "weight": {
+                        "type": "string",
+                        "enum": [
+                          "100",
+                          "200",
+                          "300",
+                          "400",
+                          "500",
+                          "600",
+                          "700",
+                          "800",
+                          "900"
+                        ],
+                        "title": "Weight"
+                      },
+                      "italic": {
+                        "type": "boolean",
+                        "nullable": true,
+                        "title": "Italic"
+                      },
+                      "src": {
+                        "type": "string",
+                        "format": "file",
+                        "title": "Src"
+                      }
+                    },
+                    "required": [
+                      "weight",
+                      "src"
+                    ],
+                    "title": "{{weight}} {{#italic}}Italic{{/italic}}{{^italic}}{{/italic}}"
+                  },
+                  "title": "Variations"
+                }
+              },
+              "required": [
+                "family",
+                "variations"
+              ],
+              "titleBy": "family"
+            },
+            "title": "Fonts"
+          }
+        }
+      },
+      "d2Vic2l0ZS9sb2FkZXJzL3NlY3JldC50cw==": {
+        "title": "Secret",
+        "type": "object",
+        "required": [
+          "__resolveType",
+          "encrypted"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "website/loaders/secret.ts"
+            ],
+            "default": "website/loaders/secret.ts"
+          },
+          "encrypted": {
+            "type": "string",
+            "title": "Secret Value",
+            "format": "secret"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "title": "Secret Name",
+            "description": "Used in dev mode as a environment variable (should not contain spaces or special characters)",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+          }
+        }
+      },
+      "d2Vic2l0ZS9sb2FkZXJzL3NlY3JldFN0cmluZy50cw==": {
+        "title": "Secret String",
+        "type": "object",
+        "required": [
+          "__resolveType",
+          "secret"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "website/loaders/secretString.ts"
+            ],
+            "default": "website/loaders/secretString.ts"
+          },
+          "secret": {
+            "type": "object",
+            "properties": {},
+            "title": "Secret",
+            "hideOption": "true",
+            "format": "password"
           }
         }
       },
@@ -124,7 +396,38 @@
           }
         }
       },
-      "ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props": {
+      "ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVhZGVyLnRzeA==@Props": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true,
+            "title": "Título"
+          }
+        }
+      },
+      "c2l0ZS9zZWN0aW9ucy9IZWFkZXIudHN4": {
+        "title": "site/sections/Header.tsx",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVhZGVyLnRzeA==@Props"
+          }
+        ],
+        "required": [
+          "__resolveType"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "site/sections/Header.tsx"
+            ],
+            "default": "site/sections/Header.tsx"
+          }
+        }
+      },
+      "ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props": {
         "type": "object",
         "properties": {
           "title": {
@@ -144,7 +447,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props"
+            "$ref": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props"
           }
         ],
         "required": [
@@ -159,6 +462,271 @@
             "default": "site/sections/Hero.tsx"
           }
         }
+      },
+      "ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvYXBwcy9zaXRlLnRz@Props": {
+        "type": "object",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "items": {},
+            "nullable": true,
+            "title": "Routes Map"
+          },
+          "global": {
+            "type": "array",
+            "items": {},
+            "nullable": true,
+            "title": "Global Sections"
+          },
+          "errorPage": {
+            "title": "Error Page"
+          },
+          "caching": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "nullable": true,
+                "title": "Enabled"
+              },
+              "directives": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "const": "stale-while-revalidate",
+                          "title": "Name"
+                        },
+                        "value": {
+                          "type": "number",
+                          "title": "Value"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value"
+                      ],
+                      "title": "StaleWhileRevalidate"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "const": "max-age",
+                          "title": "Name"
+                        },
+                        "value": {
+                          "type": "number",
+                          "title": "Value"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value"
+                      ],
+                      "title": "MaxAge"
+                    }
+                  ]
+                },
+                "nullable": true,
+                "title": "Directives"
+              }
+            },
+            "nullable": true,
+            "title": "Caching configuration of pages"
+          },
+          "firstByteThresholdMS": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Global Async Rendering (Deprecated)",
+            "deprecated": true,
+            "default": false
+          },
+          "avoidRedirectingToEditor": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Avoid redirecting to editor"
+          },
+          "abTesting": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "nullable": true,
+                "title": "Enabled"
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "The name of the A/B test — appears in cookies",
+                "title": "Name"
+              },
+              "matcher": {
+                "title": "Matcher"
+              },
+              "urlToRunAgainst": {
+                "type": "string",
+                "nullable": true,
+                "description": "URL to run the A/B test against",
+                "title": "UrlToRunAgainst"
+              },
+              "replaces": {
+                "type": "array",
+                "items": {},
+                "nullable": true,
+                "title": "Replaces"
+              },
+              "includeScriptsToHead": {
+                "type": "object",
+                "properties": {
+                  "includes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "type": "string",
+                          "title": "Src"
+                        }
+                      },
+                      "required": [
+                        "src"
+                      ]
+                    },
+                    "nullable": true,
+                    "title": "Includes"
+                  }
+                },
+                "nullable": true,
+                "title": "IncludeScriptsToHead"
+              },
+              "includeScriptsToBody": {
+                "type": "object",
+                "properties": {
+                  "includes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "type": "string",
+                          "title": "Src"
+                        }
+                      },
+                      "required": [
+                        "src"
+                      ]
+                    },
+                    "nullable": true,
+                    "title": "Includes"
+                  }
+                },
+                "nullable": true,
+                "title": "IncludeScriptsToBody"
+              }
+            },
+            "nullable": true,
+            "title": "AB Testing"
+          },
+          "flavor": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "framework": {
+                    "type": "string",
+                    "const": "fresh",
+                    "default": "fresh",
+                    "title": "Framework"
+                  }
+                },
+                "required": [
+                  "framework"
+                ],
+                "titleBy": "framework",
+                "title": "FreshFlavor"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "framework": {
+                    "type": "string",
+                    "const": "htmx",
+                    "default": "htmx",
+                    "title": "Framework"
+                  }
+                },
+                "required": [
+                  "framework"
+                ],
+                "titleBy": "framework",
+                "title": "HtmxFlavor"
+              }
+            ],
+            "nullable": true,
+            "title": "Flavor"
+          },
+          "seo": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true,
+            "title": "Seo"
+          },
+          "theme": {
+            "title": "Theme"
+          },
+          "sendToClickHouse": {
+            "type": "boolean",
+            "nullable": true,
+            "hide": "true",
+            "title": "SendToClickHouse"
+          },
+          "defaultImageQuality": {
+            "type": "string",
+            "nullable": true,
+            "title": "Default Image Quality"
+          },
+          "disableProxy": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Disable image/asset proxy for this site"
+          },
+          "whilelistURLs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "title": "Whilelist URL Patterns"
+          }
+        },
+        "title": "Site"
+      },
+      "c2l0ZS9hcHBzL3NpdGUudHM=": {
+        "title": "site/apps/site.ts",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvYXBwcy9zaXRlLnRz@Props"
+          }
+        ],
+        "required": [
+          "__resolveType"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "site/apps/site.ts"
+            ],
+            "default": "site/apps/site.ts"
+          }
+        }
       }
     },
     "root": {
@@ -168,8 +736,12 @@
             "$ref": "#/definitions/Resolvable"
           },
           {
+            "$ref": "#/definitions/c2l0ZS9zZWN0aW9ucy9IZWFkZXIudHN4",
+            "inputSchema": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVhZGVyLnRzeA==@Props"
+          },
+          {
             "$ref": "#/definitions/c2l0ZS9zZWN0aW9ucy9IZXJvLnRzeA==",
-            "inputSchema": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvd29ya3NwYWNlL3dpbGdubmUvZGVjby1zdGFydC1leGFtcGxlL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props"
+            "inputSchema": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props"
           }
         ]
       },
@@ -177,6 +749,24 @@
         "anyOf": [
           {
             "$ref": "#/definitions/Resolvable"
+          },
+          {
+            "$ref": "#/definitions/c2l0ZS9sb2FkZXJzL3Rlc3QudHM="
+          },
+          {
+            "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL2Vudmlyb25tZW50LnRz"
+          },
+          {
+            "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL2ZvbnRzL2dvb2dsZUZvbnRzLnRz"
+          },
+          {
+            "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL2ZvbnRzL2xvY2FsLnRz"
+          },
+          {
+            "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL3NlY3JldC50cw=="
+          },
+          {
+            "$ref": "#/definitions/d2Vic2l0ZS9sb2FkZXJzL3NlY3JldFN0cmluZy50cw=="
           },
           {
             "$ref": "#/definitions/Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvbGlzdGluZ1BhZ2UudHM="
@@ -205,7 +795,12 @@
         "anyOf": []
       },
       "apps": {
-        "anyOf": []
+        "anyOf": [
+          {
+            "$ref": "#/definitions/c2l0ZS9hcHBzL3NpdGUudHM=",
+            "inputSchema": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvYXBwcy9zaXRlLnRz@Props"
+          }
+        ]
       }
     }
   },

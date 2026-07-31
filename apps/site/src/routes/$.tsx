@@ -3,10 +3,8 @@ import { cmsRouteConfig, deferredSectionLoader } from "@decocms/start/routes";
 import { DecoPageRenderer } from "@decocms/start/hooks";
 
 const routeConfig = cmsRouteConfig({
-  siteName: "Deco Start Example",
-  defaultTitle: "Deco Start Example",
-  defaultDescription: "Storefront powered by @decocms/start + TanStack Start",
-  ignoreSearchParams: ["skuId"],
+  defaultTitle: "Default title",
+  siteName: "Site Name",
 });
 
 export const Route = createFileRoute("/$")({

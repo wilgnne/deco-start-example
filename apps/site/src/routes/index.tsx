@@ -4,9 +4,7 @@ import { DecoPageRenderer } from "@decocms/start/hooks";
 
 export const Route = createFileRoute("/")({
   ...cmsHomeRouteConfig({
-    defaultTitle: "Deco Start Example",
-    defaultDescription: "Storefront powered by @decocms/start + TanStack Start",
-    siteName: "Deco Start Example",
+    defaultTitle: "Default title",
   }),
   component: HomePage,
 });
