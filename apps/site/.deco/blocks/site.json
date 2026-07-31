@@ -1,0 +1,27 @@
+{
+  "__resolveType": "site/apps/site.ts",
+  "routes": [
+    {
+      "__resolveType": "website/loaders/pages.ts"
+    }
+  ],
+  "seo": {
+    "titleTemplate": "%s | Tanstack Example",
+    "descriptionTemplate": "%s",
+    "type": "website",
+    "title": "Tanstack Example",
+    "description": "A simple example of a Tanstack website built with Deco.",
+    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/5018/71c97b9c-b94a-4cf5-8120-4bb7b99b21bb",
+    "noIndexing": false
+  },
+  "global": [
+    {
+      "__resolveType": "site/sections/Header.tsx",
+      "title": "sitesectionsHeader_copy"
+    }
+  ],
+  "caching": {
+    "directives": []
+  },
+  "firstByteThresholdMS": false
+}
