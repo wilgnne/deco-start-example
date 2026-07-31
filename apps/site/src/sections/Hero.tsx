@@ -7,6 +7,13 @@ export interface Props {
   description?: string;
 }
 
+export async function loader(
+  props: Props,
+  req: Request,
+): Promise<Props> {
+  return props;
+}
+
 export default function Hero({
   title = "Bem-vindo",
   description = "Edite esta seção pelo admin.deco.cx",
@@ -20,3 +27,6 @@ export default function Hero({
     </section>
   );
 }
+
+export const eager = true;
+export const sync = true;

@@ -7,9 +7,11 @@
     "dev": "vite dev",
     "start": "node .output/server/index.mjs",
     "build": "pnpm run generate && vite build",
-    "generate": "pnpm run generate:blocks && pnpm run generate:schema",
+    "generate": "pnpm run generate:blocks && pnpm run generate:schema && pnpm run generate:sections && pnpm run generate:loaders",
     "generate:blocks": "tsx node_modules/@decocms/start/scripts/generate-blocks.ts",
     "generate:schema": "tsx node_modules/@decocms/start/scripts/generate-schema.ts --site deco-start-example",
+    "generate:sections": "tsx node_modules/@decocms/start/scripts/generate-sections.ts",
+    "generate:loaders": "tsx node_modules/@decocms/start/scripts/generate-loaders.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

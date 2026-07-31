@@ -12,6 +12,10 @@
         }
       },
       "loaders": {
+        "site/loaders/test.ts": {
+          "$ref": "#/definitions/c2l0ZS9sb2FkZXJzL3Rlc3QudHM=",
+          "namespace": "site"
+        },
         "commerce/loaders/product/extensions/listingPage.ts": {
           "$ref": "#/definitions/Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvbGlzdGluZ1BhZ2UudHM=",
           "namespace": "commerce"
@@ -49,6 +53,22 @@
         "properties": {
           "__resolveType": {
             "type": "string"
+          }
+        }
+      },
+      "c2l0ZS9sb2FkZXJzL3Rlc3QudHM=": {
+        "title": "site/loaders/test.ts",
+        "type": "object",
+        "required": [
+          "__resolveType"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "site/loaders/test.ts"
+            ],
+            "default": "site/loaders/test.ts"
           }
         }
       },
@@ -177,6 +197,9 @@
         "anyOf": [
           {
             "$ref": "#/definitions/Resolvable"
+          },
+          {
+            "$ref": "#/definitions/c2l0ZS9sb2FkZXJzL3Rlc3QudHM="
           },
           {
             "$ref": "#/definitions/Y29tbWVyY2UvbG9hZGVycy9wcm9kdWN0L2V4dGVuc2lvbnMvbGlzdGluZ1BhZ2UudHM="
