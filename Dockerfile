@@ -16,7 +16,7 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile
 
 # ---------------------------------------------------------------------------
-# build — generate CMS artifacts (blocks/schema) and produce dist/
+# build — generate CMS artifacts (blocks/schema) and produce .output/
 # ---------------------------------------------------------------------------
 FROM deps AS build
 WORKDIR /app
@@ -42,10 +42,10 @@ ENV NODE_ENV=production
 ENV PORT=8080
 
 COPY --from=prod-deps /app/node_modules ./node_modules
-COPY --from=build /app/dist ./dist
+COPY --from=build /app/.output ./.output
 COPY --from=build /app/package.json ./package.json
 
 USER node
 EXPOSE 8080
 
-CMD ["node", "dist/server/worker-entry.js"]
+CMD ["node", ".output/server/index.mjs"]
