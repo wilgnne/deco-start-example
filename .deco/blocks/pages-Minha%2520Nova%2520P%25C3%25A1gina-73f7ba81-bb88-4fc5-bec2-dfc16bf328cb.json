@@ -1,0 +1,9 @@
+{
+  "name": "Minha Nova Página",
+  "path": "/caminho-exemplo",
+  "sections": [],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
