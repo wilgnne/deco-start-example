@@ -12,6 +12,10 @@
         }
       },
       "loaders": {
+        "site/loaders/getOptions.ts": {
+          "$ref": "#/definitions/c2l0ZS9sb2FkZXJzL2dldE9wdGlvbnMudHM=",
+          "namespace": "site"
+        },
         "site/loaders/test.ts": {
           "$ref": "#/definitions/c2l0ZS9sb2FkZXJzL3Rlc3QudHM=",
           "namespace": "site"
@@ -53,6 +57,22 @@
         "properties": {
           "__resolveType": {
             "type": "string"
+          }
+        }
+      },
+      "c2l0ZS9sb2FkZXJzL2dldE9wdGlvbnMudHM=": {
+        "title": "site/loaders/getOptions.ts",
+        "type": "object",
+        "required": [
+          "__resolveType"
+        ],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "enum": [
+              "site/loaders/getOptions.ts"
+            ],
+            "default": "site/loaders/getOptions.ts"
           }
         }
       },
@@ -144,7 +164,7 @@
           }
         }
       },
-      "ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props": {
+      "ZmlsZTovLy8vYXBwL3JlcG8vYXBwcy9zaXRlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props": {
         "type": "object",
         "properties": {
           "title": {
@@ -164,7 +184,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props"
+            "$ref": "#/definitions/ZmlsZTovLy8vYXBwL3JlcG8vYXBwcy9zaXRlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props"
           }
         ],
         "required": [
@@ -189,7 +209,7 @@
           },
           {
             "$ref": "#/definitions/c2l0ZS9zZWN0aW9ucy9IZXJvLnRzeA==",
-            "inputSchema": "#/definitions/ZmlsZTovLy8vaG9tZS93aWxnbm5lLmFsZW5jYXIvZGVjby9zYW5kYm94ZXMvbW9ub3JlcG8tNmNlYTBkZmRlNjBkMWI5NC9yZXBvL2FwcHMvc2l0ZS9zcmMvc2VjdGlvbnMvSGVyby50c3g=@Props"
+            "inputSchema": "#/definitions/ZmlsZTovLy8vYXBwL3JlcG8vYXBwcy9zaXRlL3NyYy9zZWN0aW9ucy9IZXJvLnRzeA==@Props"
           }
         ]
       },
@@ -197,6 +217,9 @@
         "anyOf": [
           {
             "$ref": "#/definitions/Resolvable"
+          },
+          {
+            "$ref": "#/definitions/c2l0ZS9sb2FkZXJzL2dldE9wdGlvbnMudHM="
           },
           {
             "$ref": "#/definitions/c2l0ZS9sb2FkZXJzL3Rlc3QudHM="
